@@ -16,4 +16,8 @@ public class UserService {
     public void insert(User user) {
          userDao.insert(user);
     }
+
+    public User check(String username){return userDao.check(username);}
+
+    public  void update(String username, String password){userDao.update(username,password);}
 }

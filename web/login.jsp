@@ -59,13 +59,13 @@
 				<div class="submit">
 					<input type="submit" value="Sign in">
 					<h4>
-						<a href="#">忘记密码 ?</a>
+						<a href="<%=path%>retrieve.jsp">忘记密码 ?</a>
 					</h4>
 					<h4>
 						<a href="<%=path%>register.jsp">注册 ?</a>
 					</h4>
 					<br>
-					<br> <span style="color: red; font-size: 10px">${login_msg}</span>
+					<br> <span style="color: #ff0000; font-size: 10px">${login_msg}</span>
 					<div class="clear"></div>
 				</div>
 			</form>

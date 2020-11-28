@@ -25,9 +25,27 @@ public class UserDaoImpl  implements UserDao {
             return users.get(0);
         }
     }
-/*
-template.query（sql语句，对应的Entity对象)
- */
+
+    @Override
+    public void update(String username, String password) {
+        String sql="update user set password =? where username=?";
+        template.update(sql,password,username);
+    }
+
+    @Override
+    public User check(String username) {
+        String sql="select * from user where username = ?";
+        List<User> users = template.query(sql,new BeanPropertyRowMapper<User>(User.class),username);
+        if (users == null || users.size() ==0) {
+            return null;
+        }else {
+            return users.get(0);
+        }
+    }
+
+    /*
+    template.query（sql语句，对应的Entity对象)
+     */
     @Override
     public List<User> queryAllUsers() {
         String sql = "select * from user";
